@@ -1,0 +1,342 @@
+{
+	"info": {
+		"_postman_id": "b4726e01-b41a-4ab4-b221-bfd2dcf20fee",
+		"name": "Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add business",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userID\": \"Tim\",\r\n    \"name\": \"Sierra\",\r\n    \"addr\": \"960 SW Washington Ave\",\r\n    \"city\": \"Corvallis\",\r\n    \"State\": \"OR\",\r\n    \"zip\": \"97333\",\r\n    \"phone\": \"503-655-7989\",\r\n    \"category\": \"apartment\",\r\n    \"sub-category\": \"off-campus\",\r\n    \"website\": \"https://sierrahousing.com\",\r\n    \"email\": \"sierra@corvallishousing.gmail\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/businesses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify Business",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Veterans Shelter\",\r\n    \"addr\": \"960 SW Washington Ave\",\r\n    \"city\": \"Corvallis\",\r\n    \"State\": \"OR\",\r\n    \"zip\": \"97464\",\r\n    \"phone\": \"503-655-7989\",\r\n    \"category\": \"shelter\",\r\n    \"sub-category\": \"off-campus\",\r\n    \"website\": \"https://veteranshousing.com\",\r\n    \"email\": \"veterans@corvallishousing.gmail\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/businesses/101",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses",
+						"101"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove business",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/businesses/56789",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses",
+						"56789"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List businesses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/businesses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View business details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/businesses/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add review",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userID\": \"Tim\",\r\n    \"businessID\": 100,\r\n    \"starrating\": 5,\r\n    \"dollarrating\": 3,\r\n    \"written review\": \"This place is 15 minutes from campus\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/reviews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify Review",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userID\": \"Tim\",\r\n    \"businessID\": 100,\r\n    \"starrating\": 4,\r\n    \"dollarrating\": 2,\r\n    \"written review\": \"This place is a long walk from campus\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/reviews/14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"reviews",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete review",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/reviews/14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"reviews",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add photo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userID\": \"Tim\",\r\n    \"businessID\": 100,\r\n    \"caption\": \"Front entrance\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/photos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"photos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete photo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/photos/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"photos",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify photo caption",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userID\": \"Tim\",\r\n    \"businessID\": 100,\r\n    \"caption\": \"Garage\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/photos/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"photos",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List a user's businesses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/users/Tim/businesses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"Tim",
+						"businesses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List a user's photos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/users/Tim/photos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"Tim",
+						"photos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List a user's reviews",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/users/Tim/reviews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"Tim",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
